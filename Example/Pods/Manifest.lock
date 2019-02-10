@@ -1,0 +1,16 @@
+PODS:
+  - JVChangeableValue (0.1.0)
+
+DEPENDENCIES:
+  - JVChangeableValue (from `../`)
+
+EXTERNAL SOURCES:
+  JVChangeableValue:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JVChangeableValue: 9f24aa7b6771dedffd706cbdd036dc7e7d5397ea
+
+PODFILE CHECKSUM: 7e45b902cabcf706e12ce68d4d8165fb10e29df6
+
+COCOAPODS: 1.6.0.beta.1

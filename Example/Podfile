@@ -1,0 +1,6 @@
+use_frameworks!
+target 'JVChangeableValue_Tests' do
+  pod 'JVChangeableValue', :path => '../'
+  
+  
+end
