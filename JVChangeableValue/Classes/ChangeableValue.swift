@@ -11,16 +11,18 @@ public protocol ChangeableValues: Changeable {
     associatedtype T: Equatable
     
     var currentValue: T { get set }
-    var oldValue: (() -> (T))? { get }
+    
+    /// Optional since we don't always have the old value available when initializing the table view row.
+    var oldValue: T? { get }
 }
 
 public extension ChangeableValues {
     func determineHasBeenChanged() -> Bool {
-        return currentValue != oldValue!()
+        return currentValue != oldValue!
     }
     
     func reset() {
         // If you want to reset the current row, it should and must have an oldValue.
-        currentValue = oldValue!()
+        currentValue = oldValue!
     }
 }
