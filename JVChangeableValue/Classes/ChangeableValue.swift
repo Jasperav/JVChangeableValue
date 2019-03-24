@@ -6,7 +6,7 @@ public protocol Changeable: AnyObject {
     var hasChanged: ((_ hasNewValue: Bool) -> ())? { get set }
     
     /// Returns true if the row is changed, else false
-    var isChanged: Bool { get set }
+    var isChanged: Bool { get }
     
     /// Reset the row to the initial state
     func reset()
