@@ -5,12 +5,13 @@ public protocol Changeable: AnyObject {
     
     func determineHasBeenChanged() -> Bool
     func reset()
+    func updateOldValueFromCurrentValue()
 }
 
-public protocol OldValue {
+public protocol OldValue: AnyObject {
     associatedtype T: Equatable
     
-     var oldValue: T { get }
+     var oldValue: T { get set }
 }
 
 public protocol ChangeableValues: Changeable, OldValue {
@@ -25,5 +26,9 @@ public extension ChangeableValues {
     func reset() {
         // If you want to reset the current row, it should and must have an oldValue.
         currentValue = oldValue
+    }
+    
+    func updateOldValueFromCurrentValue() {
+        oldValue = currentValue
     }
 }
