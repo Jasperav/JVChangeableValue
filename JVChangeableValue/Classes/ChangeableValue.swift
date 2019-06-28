@@ -20,7 +20,7 @@ public protocol Changeable: AnyObject {
 public protocol OldValue: AnyObject {
     associatedtype T: Equatable
     
-     var oldValue: T { get set }
+    var oldValue: T { get set }
 }
 
 public protocol ChangeableValues: Changeable, OldValue {
@@ -31,7 +31,7 @@ public extension ChangeableValues {
     var isChanged: Bool {
         return currentValue != oldValue
     }
-
+    
     func reset() {
         // If you want to reset the current row, it should and must have an oldValue.
         currentValue = oldValue
